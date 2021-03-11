@@ -17,7 +17,8 @@ module.exports = {
 
         const newMessage = {
             author: value.author,
-            body: value.body
+            body: value.body,
+            createAt: new Date()
         }
 
         messageModel.create(newMessage)
