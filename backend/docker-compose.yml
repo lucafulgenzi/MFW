@@ -15,6 +15,7 @@ services:
     links:
       - mongodb
     networks:
+      - mean-net
       - mean-mongo-net
   mongodb:
     image: 'mongo:latest'
@@ -36,4 +37,6 @@ volumes:
     driver: local
 
 networks:
+  mean-net:
+    driver: bridge
   mean-mongo-net:
