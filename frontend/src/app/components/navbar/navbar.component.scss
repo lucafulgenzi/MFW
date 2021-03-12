@@ -1,0 +1,32 @@
+$navbar-height: 2em;
+
+#navbar {
+  border: none;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 0;
+  > * {
+    height: $navbar-height;
+    width: 100%;
+    background-color: var(--primary-color) !important;
+    font-size: var(--font-medium);
+    color: var(--text-color-secondary) !important;
+    margin: 0;
+  }
+}
+
+::ng-deep {
+  .p-menubar {
+    background-color: var(--primary-color) !important;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  }
+
+  .p-menuitem-text {
+    font-size: var(--font-medium);
+    color: var(--text-color-secondary) !important;
+    margin: 0;
+  }
+}

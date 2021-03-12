@@ -1,0 +1,15 @@
+<p-card header="{{cardHeader}}">
+  <div class="p-grid p-fluid">
+    <span class="p-input-icon-left nick-input">
+      <i class="pi pi-user"></i>
+      <input type="text" pInputText [(ngModel)]="formNickname" placeholder="Nickname">
+    </span>
+
+    <span class="p-input-icon-left nick-input">
+      <i class="pi pi-inbox"></i>
+      <textarea pInputTextarea [(ngModel)]="formBody" [rows]="5" [cols]="30" [autoResize]="autoresizeArea" placeholder="Write your message..."></textarea>
+    </span>
+
+    <button pButton type="button" label="Send" class="p-button-raised" icon="pi pi-send" class="send-button" (click)="sendMessage()"></button>
+  </div>
+</p-card>

@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <th>Author</th>
+    <th> Message</th>
+    <th>CreatedAt</th>
+  </tr>
+  <tr *ngFor="let mess of messages">
+    <td>{{mess.author}}</td>
+    <td>{{mess.body}}</td>
+    <td>{{mess.createdAt.slice(0,10)}} {{mess.createdAt.slice(11,19)}}</td>
+  </tr>
+
+</table>
