@@ -1,8 +1,14 @@
-.nick-input{
-  margin: 0 0 2% 0;
+:host ::ng-deep .p-card{
+
+  width: fit-content;
+  margin: 0 auto;
+
+  .form-input{
+    margin: 0 0 3% 0;
+  }
+  .send-button{
+    width: 6%;
+    min-width: 150px;
+  }
 }
 
-.send-button{
-  width: 6%;
-  min-width: 150px;
-}
