@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MessageService} from '../../services/message.service';
+import {Message} from '../../classes/message';
 
 @Component({
   selector: 'app-view',
@@ -8,7 +9,8 @@ import {MessageService} from '../../services/message.service';
 })
 export class ViewComponent implements OnInit {
 
-  messages: any[];
+    messages: Message[];
+    cols: any[];
 
   constructor(
     private messageService: MessageService
@@ -19,11 +21,14 @@ export class ViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.messageService.getAllMessage().subscribe( (response) => {
-      console.log(response);
-      for (const message of response){
-        this.messages.push(message);
-      }
+      this.messages = response;
     });
+
+    this.cols = [
+      { field: 'author', header: 'Author'},
+      { field: 'body', header: 'Message' },
+      { field: 'createdAt', header: 'CreatedAt' },
+    ];
   }
 
 }

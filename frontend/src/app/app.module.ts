@@ -16,6 +16,7 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import {FormsModule} from '@angular/forms';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {ToastModule} from 'primeng/toast';
     FormsModule,
     ButtonModule,
     BrowserAnimationsModule,
-    ToastModule
+    ToastModule,
+    TableModule
 
   ],
   providers: [],
