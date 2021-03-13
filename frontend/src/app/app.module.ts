@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {FormsModule} from '@angular/forms';
 import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {ButtonModule} from 'primeng/button';
     InputTextModule,
     InputTextareaModule,
     FormsModule,
-    ButtonModule
+    ButtonModule,
+    BrowserAnimationsModule,
+    ToastModule
 
   ],
   providers: [],

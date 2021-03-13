@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MessageService} from '../../services/message.service';
 import {HttpClient} from '@angular/common/http';
+import {ToastService} from '../../services/toast.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private messageService: MessageService,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private toastService: ToastService,
   ) {
     this.cardHeader = 'Your message for world';
     this.formNickname = '';
@@ -33,8 +35,10 @@ export class HomeComponent implements OnInit {
       body: this.formBody.trim()
     };
     this.messageService.addMessage(message).subscribe( (response) => {
-      console.log(response);
+      this.toastService.submissionSuccessful();
       this.clearInput();
+    }, () => {
+        this.toastService.error();
     });
   }
 
