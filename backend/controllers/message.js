@@ -38,5 +38,46 @@ module.exports = {
             .catch((err) => {
                 return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ message: "Si è verificato un errore, riprovare più tardi.", err })
             })
+    },
+
+    async getMessageData(req, res){
+        let data = [];
+        let resData = [];
+        let count = 0;
+
+        await messageModel.find()
+            .then( (message) =>{
+                for (let x in message){
+                    let year = message[x].createdAt.getFullYear()
+                    let month = message[x].createdAt.getMonth()
+                    let day = message[x].createdAt.getDay()
+                    let fullDate = year + '-' + month + '-' + day
+                    data.push(fullDate)
+                }
+
+                for (let i = 0; i < data.length; i++){
+                    if( i !== data.length && data[i] === data[i+1]){
+                        count += 1
+                    }else if( i !== data.length && data[i] !== data[i+1]){
+                        const newDate = {
+                            messageData: data[i],
+                            messageNumber: count
+                        }
+                        resData.push(newDate)
+                        count = 0
+                    }else if( i === data.length){
+                        const newDate = {
+                            messageData: data[i],
+                            messageNumber: count
+                        }
+                        resData.push(newDate)
+                    }
+                }
+
+                return res.status(HttpStatus.OK).json(resData)
+            })
+            .catch((err) => {
+                return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ message: "Si è verificato un errore, riprovare più tardi.", err })
+            })
     }
 }
