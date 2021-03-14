@@ -17,14 +17,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = [
-      {
-        label: 'Homepage',
-        routerLink: '/'
-      },
-      {
-        label: 'View',
-        routerLink: '/view'
-      }
+      {label: 'Homepage', routerLink: '/'},
+      {label: 'View', routerLink: '/view'},
+      {label: 'Data', routerLink: '/data'}
     ];
   }
 

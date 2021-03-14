@@ -17,6 +17,8 @@ import {FormsModule} from '@angular/forms';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
 import {TableModule} from 'primeng/table';
+import { DataComponent } from './pages/data/data.component';
+import {ChartModule} from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import {TableModule} from 'primeng/table';
     HomeComponent,
     ViewComponent,
     NavbarComponent,
+    DataComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import {TableModule} from 'primeng/table';
     ButtonModule,
     BrowserAnimationsModule,
     ToastModule,
-    TableModule
+    TableModule,
+    ChartModule
 
   ],
   providers: [],

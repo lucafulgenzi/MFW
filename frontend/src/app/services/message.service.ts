@@ -22,4 +22,8 @@ export class MessageService {
   getAllMessage(): Observable<any>{
     return this.http.post(BASE_URL + '/get-all-message/', null);
   }
+
+  getDataMessage(): Observable<any>{
+    return this.http.post(BASE_URL + '/get-message-data/', null);
+  }
 }
