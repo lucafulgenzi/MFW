@@ -49,8 +49,8 @@ module.exports = {
             .then( (message) =>{
                 for (let x in message){
                     let year = message[x].createdAt.getFullYear()
-                    let month = message[x].createdAt.getMonth()
-                    let day = message[x].createdAt.getDay()
+                    let month = message[x].createdAt.getMonth() + 1
+                    let day = message[x].createdAt.getDate()
                     let fullDate = year + '-' + month + '-' + day
                     data.push(fullDate)
                 }
@@ -61,14 +61,14 @@ module.exports = {
                     }else if( i !== data.length && data[i] !== data[i+1]){
                         const newDate = {
                             messageData: data[i],
-                            messageNumber: count
+                            messageNumber: count += 1
                         }
                         resData.push(newDate)
                         count = 0
                     }else if( i === data.length){
                         const newDate = {
                             messageData: data[i],
-                            messageNumber: count
+                            messageNumber: count += 1
                         }
                         resData.push(newDate)
                     }
